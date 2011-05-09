@@ -48,8 +48,12 @@ Configure a sqlite and a MySQL database:
     ));
 
 	$app->get('/db_access', function () use ($app) {
-		$sql = "SELECT * FROM table_name WHERE id = ?";
+		$sql = "SELECT * FROM sqlite_table_name WHERE id = ?";
 		$tableEntries = $app['db.sqlite']->fetchAssoc($sql, array((int) $app['request']->get('table_id')));
+		...
+		
+		$sql = "SELECT * FROM mysql_table_name WHERE id = ?";
+		$tableEntries = $app['db.mysql']->fetchAssoc($sql, array((int) $app['request']->get('table_id')));
 		...
 	});
 
@@ -90,6 +94,10 @@ You can simply add more databases in order to provide support for separate read/
 	$app->get('/db_access', function () use ($app) {
 		$sql = "SELECT * FROM table_name WHERE id = ?";
 		$tableEntries = $app['db.pg_read']->fetchAssoc($sql, array((int) $app['request']->get('table_id')));
+		...
+		
+		$insert = array ('field1'=>'value1', 'field2'=>'value2', 'field3'=>'value3');
+		$app['db.pg_read']->insert('table_name', $insert);
 		...
 	});
 

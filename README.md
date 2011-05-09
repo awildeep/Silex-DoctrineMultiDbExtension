@@ -41,9 +41,9 @@ Configure a sqlite and a MySQL database:
             ),
          ),
 
-        'doctrine_multi_db.dbal.class_path'   =>
+        'db.dbal.class_path'   =>
                 __DIR__.'/vendor/doctrine-dbal/lib',
-        'doctrine_multi_db.common.class_path' =>
+        'db.common.class_path' =>
                 __DIR__.'/vendor/doctrine-common/lib',
     ));
 
@@ -85,9 +85,9 @@ You can simply add more databases in order to provide support for separate read/
             ),
          ),
 
-        'doctrine_multi_db.dbal.class_path'   =>
+        'db.dbal.class_path'   =>
                 __DIR__.'/vendor/doctrine-dbal/lib',
-        'doctrine_multi_db.common.class_path' =>
+        'db.common.class_path' =>
                 __DIR__.'/vendor/doctrine-common/lib',
     ));
 
@@ -112,10 +112,14 @@ Suggestions/Comments/TODO
     * I do however like how verbose this is, and you can technically use both extensions this way
 * Need to test multiple connections more and try to bre
 
+
 Credits
 -------
+
 Fabien Potencier, he wrote the code this extension is based off of.
+
 Igor Wiedler, for helping me get my environment working.
+
 Greg Militello, the guy who hobbled this code together. 
 
 

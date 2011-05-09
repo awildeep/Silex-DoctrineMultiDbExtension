@@ -33,12 +33,12 @@ class DoctrineMultiDbExtension implements ExtensionInterface
         }
 
         //autoload Doctrine DBAL
-        if (isset($app['doctrine_multi_db.dbal.class_path'])) {
-            $app['autoloader']->registerNamespace('Doctrine\\DBAL', $app['doctrine_multi_db.dbal.class_path']);
+        if (isset($app['db.dbal.class_path'])) {
+            $app['autoloader']->registerNamespace('Doctrine\\DBAL', $app['db.dbal.class_path']);
         }
         //autoload Doctrine Common
-        if (isset($app['doctrine_multi_db.common.class_path'])) {
-            $app['autoloader']->registerNamespace('Doctrine\\Common', $app['doctrine_multi_db.common.class_path']);
+        if (isset($app['db.common.class_path'])) {
+            $app['autoloader']->registerNamespace('Doctrine\\Common', $app['db.common.class_path']);
         }
     }
 }

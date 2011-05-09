@@ -97,7 +97,7 @@ You can simply add more databases in order to provide support for separate read/
 		...
 		
 		$insert = array ('field1'=>'value1', 'field2'=>'value2', 'field3'=>'value3');
-		$app['db.pg_read']->insert('table_name', $insert);
+		$app['db.pg_write']->insert('table_name', $insert);
 		...
 	});
 

@@ -125,5 +125,6 @@ Greg Militello, the guy who hobbled this code together.
 
 License
 -------
-Not currently released with a license, until I talk to some folks.  Probably the same lisence as Silex for
-compatibility.
+
+Silex/Extensions/DoctrineMultiDbExtension is licensed under the MIT license.  Which is also the same license Silex was
+released under.  

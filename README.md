@@ -24,6 +24,7 @@ Configuration/Register the extension
 ------------------------------------
 
 Configure a sqlite and a MySQL database:
+
     $app->register(new Silex\Extension\DoctrineMultiDbExtension(),
     array(
         'doctrine_multi_db.dbs' => array (

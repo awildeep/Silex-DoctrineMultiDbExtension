@@ -47,6 +47,12 @@ Configure a sqlite and a MySQL database:
                 __DIR__.'/vendor/doctrine-common/lib',
     ));
 
+	$app->get('/db_access', function () use ($app) {
+		$sql = "SELECT * FROM table_name WHERE id = ?";
+		$tableEntries = $app['db.sqlite']->fetchAssoc($sql, array((int) $app['request']->get('table_id')));
+		...
+	});
+
 You can simply add more databases in order to provide support for separate read/write/report DBs:
 
     $app->register(new Silex\Extension\DoctrineMultiDbExtension(),
@@ -81,10 +87,14 @@ You can simply add more databases in order to provide support for separate read/
                 __DIR__.'/vendor/doctrine-common/lib',
     ));
 
+	$app->get('/db_access', function () use ($app) {
+		$sql = "SELECT * FROM table_name WHERE id = ?";
+		$tableEntries = $app['db.pg_read']->fetchAssoc($sql, array((int) $app['request']->get('table_id')));
+		...
+	});
+
 This second example would be useful if you could only write to one database node, report from another, and read from a
 third (this is a common situation in replicated database environments).
-
-Ultimately, you should be able to have as many DB connections as you need.
 
 
 Suggestions/Comments/TODO

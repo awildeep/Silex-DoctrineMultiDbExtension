@@ -7,9 +7,13 @@ This extension can be used if you need to access multiple databases via Silex.
 Installation
 ------------
 
-Include the extension into your Silex project (directory may very):
+Create a directory structure in your root like this:
 
-    include_once __DIR__ . '/vendor/Silex/Extension/DoctrineMultiDbExtension.php';
+    ./vendor/awildeep/Silex/Extension/
+
+Place DoctrineMultiDbExtension.php inside this new directory.  Inside your silex application register the extension:
+
+    $app['autoloader']->registerNamespace('awildeep',__DIR__.'/vendor');
 
 Download the Doctrine2 DBAL and Common libraries.  The examples below assume they will be in:
 
@@ -25,7 +29,7 @@ Configuration/Register the extension
 
 Configure a sqlite and a MySQL database:
 
-    $app->register(new Silex\Extension\DoctrineMultiDbExtension(),
+    $app->register(new awildeep\Silex\Extension\DoctrineMultiDbExtension(),
     array(
         'doctrine_multi_db.dbs' => array (
             'db.sqlite' => array(

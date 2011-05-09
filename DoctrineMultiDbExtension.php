@@ -7,7 +7,7 @@
  * @author Greg Militello <junk@thinkof.net>
  *
  */
-namespace Silex\Extension;
+namespace awildeep\Silex\Extension;
 
 use Silex\Application;
 use Silex\ExtensionInterface;

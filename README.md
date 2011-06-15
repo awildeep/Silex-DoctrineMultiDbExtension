@@ -1,3 +1,11 @@
+**NOTE:**
+=========
+
+I am actively trying to make this extension obsolete.  There is a pull request currently in progress.  Feel free to chime in on it, and lets see if it can be a success.  https://github.com/fabpot/Silex/pull/110
+
+This extension will be maintained at least until the above pull request is merged into Silex.  Until then, I actually think the Extension in the pull request is better than this one.  If it does not get merged, this version will certainly change.
+
+
 Doctrine Multiple DB Extension for Silex
 ========================================
 
